@@ -2,14 +2,25 @@
 <html>
 	<head>
 		<title>GitHub contribution checker options.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css" />	
+		<link rel="stylesheet" href="css/options.css" />
 	</head>
 	<body>
-		<form action="#" id="setup_form">
-			<span>GitHub account name(e.g. dhh, ariedov...)<input id="account" name="account" type="text" /></span>
-			<input type="submit" />
-		</form>
-		
-		<div id="status"></div>
+		<div class="container">
+			<div id="status" class="alert alert-success"></div>
+
+			<form id="setup_form" action="#" class="navbar-form navbar-left">
+				<div class="form-group">				
+					<input id="account" type="text" class="form-control" placeholder="Github Username">				
+				</div>
+				<button type="submit" class="btn btn-default">Save</button>			
+			</form>
+		</div>
+				
 		<script src="js/options.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
