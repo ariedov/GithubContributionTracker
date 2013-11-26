@@ -12,6 +12,9 @@
 	text-align: center;
 }
 
-#commit_count {
-	
+#commits_count {
+	text-align: center;
+	padding-top: 35%;	
+	display: block;
+	font-size: xx-large;
 }

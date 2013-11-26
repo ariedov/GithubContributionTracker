@@ -19,20 +19,22 @@ var githubProgressGenerator = {
 	},
 
 	showProgress_: function (e) {		
-		var p = document.getElementById('activity_streak');			
+//		var p = document.getElementById('activity_streak');			
 		var icon = document.getElementById('activity_icon');
+		var commits = document.getElementById('commits_count');
 		
 		var yearProgress = JSON.parse(e.target.responseText);
 		console.log(yearProgress);
 		
 		var currentProgress = yearProgress.pop();
 		var data = currentProgress[0];
-		var commits = currentProgress[1];
+		var commitsCount = currentProgress[1];
 		
-		p.innerText = data;
-		p.style.visibility = 'visible';
+//		p.innerText = data;
+//		p.style.visibility = 'visible';
 		icon.style.visibility = 'visible';
-		icon.style.background = this.chooseColor_(commits);
+		icon.style.background = this.chooseColor_(commitsCount);
+		commits.innerText = commitsCount;
 	},	
 	
 	chooseColor_: function(commits) {
