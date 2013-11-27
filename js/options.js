@@ -26,8 +26,6 @@ function formSubmit() {
 		
 	};
 	xhr.send();
-	
-	
-	
+		
 	return false;
 }
