@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "GitHub activity checker",
+  "description": "This extension shows you your today GitHub activity.",
+  "version": "0.3",
+  "options_page": "options.html",
+  
+  "permissions": [
+    "https://github.com/ariedov"
+  ],
+  
+  "browser_action": {
+    "default_icon": "github.png",
+    "default_popup": "popup.html"
+  }
+}
