@@ -7,7 +7,7 @@
   "options_page": "options.html",
   
   "permissions": [
-    "https://github.com/ariedov"
+    "https://github.com/"
   ],
   
   "browser_action": {
