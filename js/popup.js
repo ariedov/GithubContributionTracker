@@ -36,7 +36,7 @@ var githubProgressGenerator = {
 	
 	chooseColor_: function(maxCommits, commits) {
 		var colors = this.colors;
-		var delta = Math.ceil(maxCommits / 4);
+		var delta = Math.ceil(maxCommits / 5);
 		console.log("Max: " + maxCommits + " delta: " + delta);		
 		
 		if (commits < 1) {
