@@ -37,8 +37,11 @@ function formSubmit() {
 
 function showSavedAccount() {
 	var savedAccount = "https://github.com/" + localStorage['github_account'];
+	var currentAccount = document.getElementById("current");
+	
 	if (localStorage['github_account']) {
-		var currentAccount = document.getElementById("current");
 		currentAccount.innerHTML = "Current saved account: <a href='" + savedAccount + "'>" + savedAccount + "</a>"
+	} else {
+		currentAccount.innerHTML = "There is no saved account yet.";	
 	}
 }

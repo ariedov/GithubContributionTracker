@@ -85,5 +85,11 @@ var githubProgressGenerator = {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  githubProgressGenerator.requestProgress();
+	if (localStorage['github_account']) {
+	  	githubProgressGenerator.requestProgress();
+	} else {
+		var extId = chrome.i18n.getMessage("@@extension_id");
+		chrome.tabs.create({ url: "chrome-extension://" + extId + "/options.html" });
+		window.close();
+	}
 });
