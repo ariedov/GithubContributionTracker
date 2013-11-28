@@ -10,14 +10,14 @@ var githubProgressGenerator = {
 		"#1e6823",
 	],
 		
-    requestProgress: function() {
+	requestProgress: function() {
 		var req = new XMLHttpRequest();
 		req.open("GET", this.getGithubLink_(), true);		
 		req.onload = this.showProgress_.bind(this);
 		req.send(null);
 	},
 
-	showProgress_: function (e) {		
+	showProgress_: function (e) {	
 		var icon = document.getElementById('activity_icon');
 		var commits = document.getElementById('commits_count');
 		
@@ -30,8 +30,13 @@ var githubProgressGenerator = {
 		
 		var maxCommits = this.getMaxCommitCount_(yearProgress);
 		icon.style.visibility = 'visible';		
-		icon.style.background = this.chooseColor_(maxCommits, commitsCount);
-		commits.innerText = commitsCount;
+		if (e.target.status == 200 || e.target.status == 201) {
+			icon.style.background = this.chooseColor_(maxCommits, commitsCount);
+			commits.innerText = commitsCount;
+		} else {
+			icon.style.background = this.colors[0];
+			commits.innerText = "";
+		}
 	},	
 	
 	chooseColor_: function(maxCommits, commits) {
@@ -65,9 +70,6 @@ var githubProgressGenerator = {
 	
 	getSavedAccount_ : function() {
 		var savedAccount = localStorage["github_account"];
-		if (!savedAccount) {
-			savedAccount = "ariedov";
-		}
 		return savedAccount;
 	},
 	
